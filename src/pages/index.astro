@@ -1,10 +1,16 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro';
 
-const title = "Blog | Martin Ferreira";
+const pageTitle = "Inicio | Martin Ferreira";
+
 ---
 
-<MainLayout title={title}>
-	<h1>{title}</h1>
+<MainLayout pageTitle={pageTitle}>
+	<div class="mx-auto text-center mb-8 lg:mb-16">
+    <h1 class="mb-4 text-5xl tracking-tight font-extrabold text-white">
+      Martín Ferreira <strong class="text-yellow-400">Blog</strong> 🚀
+    </h1>
+    <p class="font-light text-gray-500 sm:text-xl dark:text-gray-400">¡Bienvenidos a este espacio donde espero que encuentren información valiosa!</p>
+  </div>
 </MainLayout>
 
