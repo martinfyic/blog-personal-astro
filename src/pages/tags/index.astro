@@ -1,0 +1,14 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+const pageTitle = "Índice de etiquetas | Martin Ferreira";
+
+const allPosts = await Astro.glob('../posts/*.md');
+const tags = [...new Set(allPosts.map((post) => post.frontmatter.tags).flat())];
+
+---
+
+<MainLayout pageTitle={pageTitle}>
+  <div class="tags">
+    {tags.map((tag) => <p class="tag"><a href={`/tags/${tag}`}>{tag}</a></p>)}
+  </div>
+</MainLayout>
