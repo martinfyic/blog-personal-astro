@@ -1,0 +1,20 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import BlogPost from '../components/BlogPost.astro';
+
+const allPosts = await Astro.glob('../pages/posts/*.md');
+const pageTitle = "Blog | Martin Ferreira";
+
+---
+
+<MainLayout pageTitle={pageTitle}>
+	<h1 class="mb-8 lg:mb-16 text-center text-5xl tracking-tight font-extrabold text-white">
+		Mi blog 
+	</h1>
+	<h2 class="mb-8 lg:mb-16 text-center text-xl tracking-tight font-extrabold text-white">
+		Aquí es donde publicaré sobre mi viaje de aprendizaje Astro.
+	</h2>
+	<ul class="flex flex-col justify-center items-center gap-3">
+		{allPosts.map((post) => <BlogPost url={post.url} title={post.frontmatter.title} />)}
+	</ul>
+</MainLayout>
