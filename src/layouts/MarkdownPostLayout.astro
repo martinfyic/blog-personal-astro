@@ -1,7 +1,27 @@
 ---
+interface FrontmatterProps {
+	frontmatter: FrontmatterPost;
+}
+
+interface FrontmatterPost {
+	title: string;
+	pubDate: string;
+	description: string;
+	author: string;
+	image: {
+		url: string;
+		alt: string;
+	};
+	tags: string[];
+	file: string;
+	url: string;
+}
+
+
 import MainLayout from "./MainLayout.astro";
 import TagButton from "../components/TagButton.astro"
-const { frontmatter } = Astro.props;
+const { frontmatter } = Astro.props as FrontmatterProps;
+
 ---
 
 <MainLayout pageTitle={frontmatter.title} >
@@ -9,23 +29,60 @@ const { frontmatter } = Astro.props;
   <picture class="flex flex-col justify-center items-center my-6">
     <img class="w-3/4" src={frontmatter.image.url} alt={frontmatter.image.alt} />
   </picture>
-  <div class="flex flex-row gap-x-2 justify-start mb-8 lg:mb-16">
-    <p class="text-gray-500 text-sm lg:text-base dark:text-gray-400">
-      Tags: 
-    </p>
     <div class="flex flex-col items-center justify-start w-full text-centter md:flex-row">
       {frontmatter.tags.map((tag: string) => (
         <p class="tag"><TagButton url={`/tags/${tag}`}>{tag}</TagButton></p>
       ))}
     </div>
-  </div>
-  
   <div class="mb-8 lg:mb-16">
     <p class="text-gray-500 text-sm lg:text-base mb-4">Publicado el: {frontmatter.pubDate.slice(0,10)}</p>
     <p class="text-gray-500 text-sm lg:text-base mb-4"><em>{frontmatter.description}</em></p>
-    <p class="text-gray-500 text-sm lg:text-base mb-4">Escrito por {frontmatter.author}</p>
+    <p class="text-gray-500 text-sm lg:text-base mb-4">Escrito por: <span class="text-yellow-400 font-bold">{frontmatter.author}</span></p>
     <hr>
   </div>
   
   <slot />
 </MainLayout>
+
+<style is:inline>
+  p {
+    margin-bottom: 1rem;
+    font-size: 1rem;
+  }
+
+  h2 {
+    text-align: center;
+    font-size: 3rem;
+    font-weight: 400;
+    margin-bottom: 1rem;
+    margin-top: 3rem;;
+  }
+
+  li {
+    list-style-type: decimal;
+    margin-bottom: 0,5rem;
+  }
+
+  pre {
+    padding: 1rem;
+
+  }
+
+  img {
+    display: block;
+    margin: auto;
+    width: 50%;
+    height: auto;
+  }
+
+  a {
+    display: inline-block;
+    color: rgb(250 204 21);
+    transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+  }
+
+  a:hover {
+    color: rgb(247, 223, 139);
+    transform: scale(1.08);
+  }
+</style>
