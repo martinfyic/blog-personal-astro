@@ -81,4 +81,6 @@ React JS está en constante evolución y se están agregando nuevas característ
 
 Si está interesado en desarrollar aplicaciones web o aplicaciones móviles, React JS y React Native son definitivamente bibliotecas que debería considerar aprender.
 
-[Documentación](https://es.react.dev/)
+### Links de interés 🔗:
+
+_[react.dev](https://es.react.dev/)_
