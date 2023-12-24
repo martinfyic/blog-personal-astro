@@ -5,9 +5,9 @@ interface Props {
 
 const { url } = Astro.props;
 ---
-
 <a 
   href={ url } 
-  class="flex-row justify-center  font-light text-gray-500 text-sm lg:text-base dark:text-gray-400 cursor-pointer text-center inline-flex items-center mr-2 mb-2 transition-all duration-200 ease-in-out hover:text-white scale-90 gap-x-2 opacity-70 hover:opacity-100">
+  class="font-light text-gray-500 text-sm lg:text-base dark:text-gray-400 cursor-pointer text-center transition-all duration-200 ease-in-out hover:text-white scale-90 gap-x-2 opacity-70 hover:opacity-100">
+  #
   <slot />
 </a>

@@ -1,14 +1,20 @@
 ---
 import MainLayout from '../../layouts/MainLayout.astro';
+import TagCard from '../../components/TagCard.astro';
 const pageTitle = "Índice de etiquetas | Martin Ferreira";
 
 const allPosts = await Astro.glob('../posts/*.md');
 const tags = [...new Set(allPosts.map((post) => post.frontmatter.tags).flat())];
-
 ---
 
 <MainLayout pageTitle={pageTitle}>
-  <div class="tags">
-    {tags.map((tag) => <p class="tag"><a href={`/tags/${tag}`}>{tag}</a></p>)}
-  </div>
+  <h1 class="mb-4 text-center text-5xl tracking-tight font-extrabold text-white">
+		Todos los <span class="text-yellow-400"># tags</span> 
+	</h1>
+  <h2 class="font-light text-gray-500 sm:text-xl dark:text-gray-400 text-center">
+		Aquí encontraras todos los tagas relacionados con los posts.
+	</h2>
+  <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 py-8 mt-8 md:mt-16">
+    {tags.map((tag) => <TagCard tag={tag} />)}
+  </section>
 </MainLayout>

@@ -18,12 +18,11 @@ export async function getStaticPaths() {
 
 const { tag } = Astro.params;
 const { posts } = Astro.props;
-
 ---
 
 <MainLayout pageTitle={tag}>
   <h1 class="mb-8 lg:mb-16 text-center text-5xl tracking-tight font-extrabold text-white">Entradas etiquetadas con <strong class="text-yellow-400">{tag}</strong></h1>
-  <ul>
-    {posts.map((post) => <BlogPost url={post.url} title={post.frontmatter.title}/>)}
-  </ul>
+  <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 py-8">
+    {posts.map((post) => <BlogPost post={post}/>)}
+  </section>
 </MainLayout>
