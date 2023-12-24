@@ -5,7 +5,7 @@ pubDate: 2023-12-18
 description: 'React JS es una popular biblioteca de JavaScript que se ha utilizado para desarrollar interfaces de usuario atractivas e interactivas para aplicaciones web'
 author: 'Martin Ferreira'
 image:
-  url: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMNoPJriG9L1hiVOEzylwG59P9LlZxu0eUmK9CjTuEECXExZSKp1lmI6q-Kpjqcyv0W9g&usqp=CAU'
+  url: '/images/react-js-hero.avif'
   alt: 'El logotipo completo de React Js.'
 tags: ['react', 'desarrollo web']
 ---
@@ -16,7 +16,7 @@ React JS es una biblioteca basada en componentes que permite a los desarrollador
 
 ## Virtual DOM
 
-![virtual dom](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSk_sGGJEgdWmseMDCNypWUG8QVyMSKjuIfeI3KtH65itEDUtdeVoxh90gN62fMBZP5cO4&usqp=CAU)
+![virtual dom](/images/react-js-virtual-dom.avif)
 
 Una de las características más importantes de React JS es el Virtual DOM. El Virtual DOM es una copia ligera del árbol DOM actual. React compara el Virtual DOM con el DOM real y solo actualiza los cambios necesarios en el DOM real.
 
@@ -59,7 +59,7 @@ React Native se está volviendo cada vez más popular para el desarrollo móvil 
 
 ## Renderizado del lado del servidor
 
-![React SSR](https://cdn.sanity.io/images/2ejqxsnu/production/046d564924aa4fdc1013975736507361a496706d-1456x824.png?w=1920&q=75&fit=clip&auto=format)
+![React SSR](/images/react-js-ssr.avif)
 
 El renderizado del lado del servidor (SSR) es otra característica de React JS que está ganando popularidad. SSR permite a los desarrolladores renderizar páginas web en el servidor antes de enviarlas al navegador.
 
