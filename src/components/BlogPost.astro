@@ -1,8 +1,26 @@
 ---
-  const { url, title } = Astro.props;
+  const { post } = Astro.props;
+  console.log(post)
 ---
 
-<li class="flex flex-row gap-2 items-center justify-center bg-slate-700 px-4 py-2 rounded-lg hover:scale-110 duration-200 text-lg mb-4">
-  <a href={url}>{title}</a>
-  <svg width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 6l-.112 .006a1 1 0 0 0 -.669 1.619l3.501 4.375l-3.5 4.375a1 1 0 0 0 .78 1.625h6a1 1 0 0 0 .78 -.375l4 -5a1 1 0 0 0 0 -1.25l-4 -5a1 1 0 0 0 -.78 -.375h-6z" stroke-width="0" fill="currentColor" /></svg>
-</li>
+<article class="transition-all duration-75 ease-in-out h-full shadow-lg bg-white rounded-xl overflow-hidden hover:opacity-80 hover:scale-105">
+  <a href={post.url}>
+    <img class="squiggle" src={post.frontmatter.image.url} alt={post.frontmatter.title} width="360" height="192">
+    <div class="py-6 px-8">
+      <h2 class="font-bold text-2xl leading-tight text-gray-900">
+        {post.frontmatter.title}
+      </h2>
+      <p class="text-xs text-gray-600 mt-4 flex items-center">
+        {post.frontmatter.pubDate.slice(0,10)}
+      </p>
+    </div>
+  </a>
+</article>
+
+<style>
+  img {
+    width: 100%;
+    aspect-ratio:15/7 auto;
+    object-fit: cover;
+  }
+</style>
