@@ -1,11 +1,10 @@
 ---
   const { post } = Astro.props;
-  console.log(post)
 ---
 
-<article class="transition-all duration-75 ease-in-out h-full shadow-lg bg-white rounded-xl overflow-hidden hover:opacity-80 hover:scale-105">
+<article class="transition-all duration-75 ease-in-out h-full shadow-lg bg-white rounded-xl  hover:opacity-80 hover:scale-105">
   <a href={post.url}>
-    <img class="squiggle" src={post.frontmatter.image.url} alt={post.frontmatter.title} width="360" height="192">
+    <img class="w-full h-1/2 object-cover" src={post.frontmatter.image.url} alt={post.frontmatter.title} width="360" height="192">
     <div class="py-6 px-8">
       <h2 class="font-bold text-2xl leading-tight text-gray-900">
         {post.frontmatter.title}
@@ -16,11 +15,3 @@
     </div>
   </a>
 </article>
-
-<style>
-  img {
-    width: 100%;
-    aspect-ratio:15/7 auto;
-    object-fit: cover;
-  }
-</style>
