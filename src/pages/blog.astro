@@ -8,13 +8,13 @@ const pageTitle = "Blog";
 ---
 
 <MainLayout pageTitle={pageTitle}>
-	<h1 class="mb-8 lg:mb-16 text-center text-5xl tracking-tight font-extrabold text-white">
-		Mi blog 
+	<h1 class="mb-4 text-center text-5xl tracking-tight font-extrabold text-white">
+		Mi <span class="text-yellow-400">blog</span> 
 	</h1>
-	<h2 class="mb-8 lg:mb-16 text-center text-xl tracking-tight font-extrabold text-white">
-		Aquí es donde publicaré sobre mi viaje de aprendizaje Astro.
+	<h2 class="font-light text-gray-500 sm:text-xl dark:text-gray-400 text-center">
+		Aquí es donde publicaré sobre mi aprendizaje.
 	</h2>
-	<section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 py-8">
+	<section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 py-8 mt-8 md:mt-16">
 		{allPosts.map((post) => <BlogPost post={post} />)}
 	</section>
 </MainLayout>
